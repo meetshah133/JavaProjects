@@ -18,7 +18,13 @@ public class MainApp {
 			System.out.println("2. Perform operations on files");
 			System.out.println("3. Exit");
 			System.out.print("Enter your choice: ");
-			int choice = sc.nextInt();
+			int choice=0;
+			try {
+				choice = Integer.parseInt(sc.nextLine());
+			   }
+			catch(Exception e) {
+			System.out.println("Please enter a correct choice");
+			}
 			System.out.println("_____________________________________");
 			switch(choice) {
 			case 1:
@@ -36,7 +42,14 @@ public class MainApp {
 					System.out.println("3. Search for file");
 					System.out.println("4. Go back to main menu");
 					System.out.print("Enter your choice: ");
-					int subChoice = sc.nextInt();
+					
+					int subChoice=0;
+					try {
+						subChoice = Integer.parseInt(sc.nextLine());
+						}
+					catch(Exception e) {
+						System.out.println("Please enter a proper choice");
+					}
 					switch(subChoice){
 					case 1: 
 						AddFile afObj = new AddFile();
@@ -60,6 +73,7 @@ public class MainApp {
 						break;
 					default:
 						System.out.println("Wrong choice entered!!");
+						
 						}
 					}
 				break;
